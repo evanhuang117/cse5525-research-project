@@ -1,5 +1,6 @@
 data/*
 checkpoints/*
+slurm*
 
 
 # Byte-compiled / optimized / DLL files

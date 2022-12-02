@@ -1,4 +1,5 @@
 run: *.py job.sh
+	conda activate pt2
 	sbatch job.sh
 
 view:
