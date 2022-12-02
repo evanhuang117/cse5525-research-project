@@ -464,6 +464,8 @@ class RobertaPromptForSequenceClassification(RobertaPreTrainedModel):
     def get_prompt(self, batch_size):
         prefix_tokens = self.prefix_tokens.unsqueeze(0).expand(batch_size, -1).to(self.roberta.device)
         prompts = self.prefix_encoder(prefix_tokens)
+        
+        #  modify prompt here
         return prompts
 
     def forward(
