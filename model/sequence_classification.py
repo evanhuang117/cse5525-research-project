@@ -366,6 +366,7 @@ class RobertaPrefixForSequenceClassification(RobertaPreTrainedModel):
         )
         past_key_values = self.dropout(past_key_values)
         past_key_values = past_key_values.permute([2, 0, 3, 1, 4]).split(2)
+        print("prefix prompts", past_key_values.shape)
         return past_key_values
 
     def forward(
