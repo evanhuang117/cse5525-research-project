@@ -1,6 +1,6 @@
 export TASK_NAME=ner
 export DATASET_NAME=conll2003
-export CUDA_VISIBLE_DEVICES=0
+#export CUDA_VISIBLE_DEVICES=0,1
 
 bs=16
 epoch=30
