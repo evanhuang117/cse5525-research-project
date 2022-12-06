@@ -258,6 +258,24 @@ class RobertaPrefixForTokenClassification(RobertaPreTrainedModel):
             self.n_head,
             self.n_embd
         )
+
+        # reversing sequence
+        # past_key_values = torch.flip(past_key_values, dims=[4])
+
+        # random shuffling of token vectors
+        # dim=1
+        # idx = torch.randperm(past_key_values.shape[dim])
+        # past_key_values = past_key_values[:,idx]
+
+        # random deletion of entire token vector in sequence
+        # num_indices = 5
+        # idx = torch.randint(high=self.pre_seq_len, size=(num_indices,))
+        # past_key_values[:,idx] = 0
+
+        # random noise 
+        variance = 0.1
+        past_key_values *= (variance**0.5) * torch.randn(past_key_values.size()).to(self.roberta.device)
+
         past_key_values = self.dropout(past_key_values)
         past_key_values = past_key_values.permute([2, 0, 3, 1, 4]).split(2)
         return past_key_values
