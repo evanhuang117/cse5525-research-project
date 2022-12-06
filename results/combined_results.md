@@ -142,3 +142,19 @@
 
 ### 8. base4
 
+### 9. reverse2 dim=1
+### 10. reverse3 dim=1
+
+### 11. delete2 num_indices=10
+
+### 12. delete3 num_indices=10
+
+### 13. shuffle2 dim=1 
+
+### 14. shuffle3 dim=1 
+
+### 15. noise2 var=0.1
+
+### 16. noise3 var=0.1
+
+### 16. noise4 var=0.5
