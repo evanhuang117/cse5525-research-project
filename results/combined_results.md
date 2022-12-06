@@ -1,4 +1,4 @@
-1. reverse
+### 1. reverse1 dim=1
 ***** train metrics *****
   epoch                    =       30.0
   train_loss               =      0.104
@@ -32,7 +32,7 @@
   predict_samples_per_second =    271.463
   predict_steps_per_second   =     33.962
 
-2. delete
+### 2. delete1 num_indices=5
 ***** train metrics *****
   epoch                    =       30.0
   train_loss               =     0.0419
@@ -66,7 +66,41 @@
   predict_samples_per_second =    140.528
   predict_steps_per_second   =      4.395
 
-3. base
+### 3. base1
+***** train metrics *****
+  epoch                    =       30.0
+  train_loss               =     0.1143
+  train_runtime            = 1:08:59.29
+  train_samples_per_second =    101.764
+  train_steps_per_second   =      6.363
+***** best metrics *****
+  best_epoch   =     27
+  best_eval_f1 = 0.9472
+  best_test_f1 = 0.9125
+  epoch        =   30.0
+
+***** eval metrics *****
+  epoch                   =       30.0
+  eval_accuracy           =     0.9918
+  eval_f1                 =     0.9466
+  eval_loss               =     0.0429
+  eval_precision          =     0.9383
+  eval_recall             =     0.9551
+  eval_runtime            = 0:00:12.24
+  eval_samples_per_second =    265.314
+  eval_steps_per_second   =     33.226
+
+***** predict metrics *****
+  predict_accuracy           =     0.9826
+  predict_f1                 =     0.9137
+  predict_loss               =     0.1637
+  predict_precision          =     0.9017
+  predict_recall             =      0.926
+  predict_runtime            = 0:00:12.33
+  predict_samples_per_second =     280.02
+  predict_steps_per_second   =     35.033
+  
+### 4. base2
 ***** train metrics *****
   epoch                    =       30.0
   train_loss               =     0.0419
@@ -100,11 +134,11 @@
   predict_samples_per_second =    140.737
   predict_steps_per_second   =      4.402
 
-4. noise
+### 5. noise1 var=0.1
 
-5. shuffle 1 
+### 6. shuffle1 dim=1 
 
-6. base
+### 7. base3
 
-7. base
+### 8. base4
 
