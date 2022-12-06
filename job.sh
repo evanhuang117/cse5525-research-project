@@ -7,7 +7,7 @@
 #SBATCH --account=PAS2318
 #SBATCH --cluster=pitzer
 #SBATCH --ntasks=1 
-#SBATCH --cpus-per-task=16
+#SBATCH --cpus-per-task=8
 
 bash run_script/run_conll03_roberta.sh
 #python3 test.py
