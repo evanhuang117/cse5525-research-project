@@ -1,4 +1,4 @@
-### 3. base1
+### 1. base1
 ***** train metrics *****
   epoch                    =       30.0
   train_loss               =     0.1143
@@ -32,7 +32,7 @@
   predict_samples_per_second =     280.02
   predict_steps_per_second   =     35.033
 
-### 4. base2
+### 2. base2
 ***** train metrics *****
   epoch                    =       30.0
   train_loss               =     0.0419
