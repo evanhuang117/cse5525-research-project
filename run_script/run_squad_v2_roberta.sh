@@ -1,6 +1,6 @@
 export TASK_NAME=qa
 export DATASET_NAME=squad_v2
-export CUDA_VISIBLE_DEVICES=0
+#export CUDA_VISIBLE_DEVICES=0
 
 bs=8
 lr=5e-3

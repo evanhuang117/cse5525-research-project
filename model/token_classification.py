@@ -1,6 +1,7 @@
 import torch
 import torch.nn
 import torch.nn.functional as F
+import math
 from torch import Tensor
 from torch.nn import CrossEntropyLoss
 
@@ -246,6 +247,9 @@ class RobertaPrefixForTokenClassification(RobertaPreTrainedModel):
             all_param += param.numel()
         total_param = all_param - bert_param
         print('total param is {}'.format(total_param)) # 9860105
+        print('shuffle dim=1')
+        # print('reverse dim=1')
+        # print('delete num_indices=10')
 
     
     def get_prompt(self, batch_size):
@@ -260,7 +264,7 @@ class RobertaPrefixForTokenClassification(RobertaPreTrainedModel):
         )
 
         # reversing sequence
-        # past_key_values = torch.flip(past_key_values, dims=[4])
+        # past_key_values = torch.flip(past_key_values, dims=[1])
 
         # random shuffling of token vectors
         # dim=1
@@ -268,13 +272,14 @@ class RobertaPrefixForTokenClassification(RobertaPreTrainedModel):
         # past_key_values = past_key_values[:,idx]
 
         # random deletion of entire token vector in sequence
-        # num_indices = 5
+        # del_amount = 0.5
+        # num_indices = math.floor(del_amount * self.pre_seq_len)
         # idx = torch.randint(high=self.pre_seq_len, size=(num_indices,))
         # past_key_values[:,idx] = 0
 
         # random noise 
-        variance = 0.1
-        past_key_values *= (variance**0.5) * torch.randn(past_key_values.size()).to(self.roberta.device)
+        # variance = 0.5
+        # past_key_values *= (variance**0.5) * torch.randn(past_key_values.size()).to(self.roberta.device)
 
         past_key_values = self.dropout(past_key_values)
         past_key_values = past_key_values.permute([2, 0, 3, 1, 4]).split(2)

@@ -1,4 +1,5 @@
 import torch
+import math
 from torch._C import NoopLogger
 import torch.nn
 import torch.nn.functional as F
@@ -278,6 +279,25 @@ class RobertaPrefixForMultipleChoice(RobertaPreTrainedModel):
             self.n_head,
             self.n_embd
         )
+
+        # reversing sequence
+        # past_key_values = torch.flip(past_key_values, dims=[1])
+
+        # random shuffling of token vectors
+        # dim=1
+        # idx = torch.randperm(past_key_values.shape[dim])
+        # past_key_values = past_key_values[:,idx]
+
+        # random deletion of entire token vector in sequence
+        del_amount = 0.5
+        num_indices = math.floor(del_amount * self.pre_seq_len)
+        idx = torch.randint(high=self.pre_seq_len, size=(num_indices,))
+        past_key_values[:,idx] = 0
+
+        # random noise 
+        # variance = 0.5
+        # past_key_values *= (variance**0.5) * torch.randn(past_key_values.size()).to(self.roberta.device)
+
         past_key_values = self.dropout(past_key_values)
         past_key_values = past_key_values.permute([2, 0, 3, 1, 4]).split(2)
         return past_key_values

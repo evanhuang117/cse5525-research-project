@@ -9,6 +9,8 @@
 #SBATCH --ntasks=1 
 #SBATCH --cpus-per-task=4
 
-bash run_script/run_conll03_roberta.sh
+# bash run_script/run_conll03_roberta.sh
+bash run_script/run_copa_roberta.sh
+# bash run_script/run_squad_v2_roberta.sh
 #python3 test.py
 scontrol show job=$SLURM_JOB_ID
