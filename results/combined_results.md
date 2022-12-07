@@ -134,27 +134,13 @@
   predict_samples_per_second =    140.737
   predict_steps_per_second   =      4.402
 
-### 5. noise1 var=0.1
 
-### 6. shuffle1 dim=1 
+### 11. delete2 num_indices=10 14001120
 
-### 7. base3
+### 12. delete3 num_indices=10 14001121
 
-### 8. base4
+### 13. shuffle2 dim=1 14001122
 
-### 9. reverse2 dim=1
-### 10. reverse3 dim=1
+### 14. shuffle3 dim=1 14001123
 
-### 11. delete2 num_indices=10
 
-### 12. delete3 num_indices=10
-
-### 13. shuffle2 dim=1 
-
-### 14. shuffle3 dim=1 
-
-### 15. noise2 var=0.1
-
-### 16. noise3 var=0.1
-
-### 16. noise4 var=0.5
