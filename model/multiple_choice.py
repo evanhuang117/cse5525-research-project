@@ -284,18 +284,18 @@ class RobertaPrefixForMultipleChoice(RobertaPreTrainedModel):
         # past_key_values = torch.flip(past_key_values, dims=[1])
 
         # random shuffling of token vectors
-        # dim=1
-        # idx = torch.randperm(past_key_values.shape[dim])
-        # past_key_values = past_key_values[:,idx]
+        dim=1
+        idx = torch.randperm(past_key_values.shape[dim])
+        past_key_values = past_key_values[:,idx]
 
         # random deletion of entire token vector in sequence
-        del_amount = 0.5
-        num_indices = math.floor(del_amount * self.pre_seq_len)
-        idx = torch.randint(high=self.pre_seq_len, size=(num_indices,))
-        past_key_values[:,idx] = 0
+        # del_amount = 0.8
+        # num_indices = math.floor(del_amount * self.pre_seq_len)
+        # idx = torch.randint(high=self.pre_seq_len, size=(num_indices,))
+        # past_key_values[:,idx] = 0
 
         # random noise 
-        # variance = 0.5
+        # variance = 0.8
         # past_key_values *= (variance**0.5) * torch.randn(past_key_values.size()).to(self.roberta.device)
 
         past_key_values = self.dropout(past_key_values)

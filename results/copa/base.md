@@ -21,4 +21,23 @@
 
 ### 2.
 
+***** train metrics *****
+  epoch                    =      120.0
+  train_loss               =     0.2752
+  train_runtime            = 0:23:43.50
+  train_samples_per_second =     33.719
+  train_steps_per_second   =      1.096
+***** best metrics *****
+  best_epoch         =    47
+  best_eval_accuracy =  0.89
+  epoch              = 120.0
+
+***** eval metrics *****
+  epoch                   =      120.0
+  eval_accuracy           =       0.86
+  eval_loss               =     0.4921
+  eval_runtime            = 0:00:01.85
+  eval_samples_per_second =     53.851
+  eval_steps_per_second   =       3.77
+
 ### 3.

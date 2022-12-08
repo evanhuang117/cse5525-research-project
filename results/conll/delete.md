@@ -101,3 +101,38 @@
   predict_runtime            = 0:00:44.53
   predict_samples_per_second =     77.529
   predict_steps_per_second   =       4.85
+
+### 4.
+
+***** train metrics *****
+  epoch                    =       30.0
+  train_loss               =      0.072
+  train_runtime            = 2:01:19.09
+  train_samples_per_second =     57.868
+  train_steps_per_second   =      1.809
+***** best metrics *****
+  best_epoch   =     27
+  best_eval_f1 = 0.9529
+  best_test_f1 = 0.9144
+  epoch        =   30.0
+
+***** eval metrics *****
+  epoch                   =       30.0
+  eval_accuracy           =      0.992
+  eval_f1                 =     0.9485
+  eval_loss               =     0.0354
+  eval_precision          =     0.9391
+  eval_recall             =     0.9581
+  eval_runtime            = 0:00:40.79
+  eval_samples_per_second =     79.675
+  eval_steps_per_second   =      5.001
+
+  ***** predict metrics *****
+  predict_accuracy           =     0.9832
+  predict_f1                 =     0.9117
+  predict_loss               =     0.1352
+  predict_precision          =     0.9015
+  predict_recall             =     0.9221
+  predict_runtime            = 0:00:42.87
+  predict_samples_per_second =     80.531
+  predict_steps_per_second   =      5.038
